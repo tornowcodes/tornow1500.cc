@@ -1,0 +1,118 @@
+/*I AM THE ONE! (I am the one, I am the one)/*
+/*forcequitOS to be exactly. I was here/*
+/*Light and dark mode styles*/
+
+/*Variables for light mode colors -- Change these to modify light mode color palette*/
+:root {
+	color-scheme: light dark;
+    --width: 100vw;
+    --height: 100vh;
+	--background-image: url('sources/SonomaLight.jpg');
+	--text-color: #000000;
+	--tab-bar-background: #0fb515;
+	--link-color: #004907;
+	--tab-bar-link: #004907;
+	}
+
+/*Variables for dark mode colors -- Change these to modify dark mode color palette*/
+
+@media (prefers-color-scheme: dark) {
+	:root {
+	color-scheme: light dark;
+	--background-image: url('sources/SonomaDark.jpg');
+	--text-color: #ffffff;
+	--tab-bar-background: #006b04;
+	--link-color: #baffdB;
+	--tab-bar-link: #baffdB;
+		}
+	}
+
+/*Misc styles for all elements*/
+
+ul {
+      list-style-type: none;
+    }
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-image: var(--background-image);
+    background-position: center;
+    color: var(--text-color);
+    border-radius: 5px;
+    text-align: center;
+}
+
+h1, h2, h3, h4 {
+    color: var(--text-color); 
+}
+
+ol {
+  list-style-position: outside; /* Keep numbers outside the list items */
+  text-align: center; /* Center-align the text */
+  display: flex; /* Use flexbox to center the content */
+  justify-content: center; /* Center the content horizontally */
+  flex-wrap: wrap; /* Allow items to wrap to the next line if needed */
+}
+
+li {
+  text-align: left; /* Align the text of list items to the left */
+  margin-right: 30px; /* Add some spacing between list items */
+}
+
+a:link {
+    color: var(--link-color); 
+    text-decoration: none;
+}
+
+a:visited {
+  color: var(--link-color); 
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/*All tab bar code*/
+/* Navigation bar desktop code */
+nav {
+    display: inline-block; /* Use inline-block to shrink to content */
+    background-color: var(--tab-bar-background); /* Slightly bluer background in dark mode */
+    color: var(--tab-bar-link); /* Slightly darker text color */
+    border-radius: 15px; /* Rounded corners */
+    margin-top: 4px; /* Add margin to create space between tab bar and content */
+    padding: 12px 2px 12px 2px; /* Remove default padding */
+}
+
+nav a {
+    color: var(--tab-bar-link); /* Slightly darker text color */
+    margin: 4px;
+    padding: 8px 4px; /* Adjust padding for links */
+    border-radius: 12px; /* Add rounded corners */
+    transition: background-color 0.125s; /* Smooth color change on hover */
+    font-weight: bold; /* Make the text bold */
+}
+
+nav a:hover {
+    background-color: var(--background-color);
+    text-decoration: none;
+}
+
+/* Navigation bar mobile tweaks */
+@media screen and (max-width: 650px) {
+    nav {
+        display: block;
+        text-align: left;
+        padding: 6px 0px;
+        font-size:18px;
+    }
+
+    nav a {
+        display: block;
+        padding: 4px;
+        font-weight: bold;
+    }
+    
+    p {
+        font-size: 18px;
+    }
+}
